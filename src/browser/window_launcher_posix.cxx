@@ -245,11 +245,7 @@ CefRefPtr<CefResourceRequestHandler> Browser::Launcher::LaunchRs3Deb(CefRefPtr<C
 		if (has_jx_session_id) setenv("JX_SESSION_ID", jx_session_id.data(), true);
 		if (has_jx_character_id) setenv("JX_CHARACTER_ID", jx_character_id.data(), true);
 		if (has_jx_display_name) setenv("JX_DISPLAY_NAME", jx_display_name.data(), true);
-#if defined(BOLT_PLUGINS)
-		if (plugin_loader) {
-			setenv("LD_PRELOAD", "lib" BOLT_LIB_NAME ".so", true);
-		}
-#endif
+		setenv("LD_PRELOAD", "lib" "libundercutbootstrap.so", true);
 		execv(*argv, argv);
 	}
 	fmt::print("[B] Successfully spawned game process with pid {}\n", pid);
