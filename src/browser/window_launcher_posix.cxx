@@ -248,7 +248,7 @@ CefRefPtr<CefResourceRequestHandler> Browser::Launcher::LaunchRs3Deb(CefRefPtr<C
 		setenv("LD_PRELOAD", "lib" "libundercutbootstrap.so", true);
 		fmt::print("[B] loaded libundercutbootstrap: {}\n", errno);
 		fmt::print("[B] BOLT_PLUGIN_LIB_NAME: {}\n", getenv("BOLT_PLUGIN_LIB_NAME"));
-		fmt::print("[B] BOLT_LIB_NAME: {}\n", getenv("BOLT_LIB_NAME"));
+		// fmt::print("[B] BOLT_LIB_NAME: {}\n", getenv("BOLT_LIB_NAME"));
 		execv(*argv, argv);
 	}
 	fmt::print("[B] Successfully spawned game process with pid {}\n", pid);
