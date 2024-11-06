@@ -245,7 +245,7 @@ CefRefPtr<CefResourceRequestHandler> Browser::Launcher::LaunchRs3Deb(CefRefPtr<C
 		if (has_jx_session_id) setenv("JX_SESSION_ID", jx_session_id.data(), true);
 		if (has_jx_character_id) setenv("JX_CHARACTER_ID", jx_character_id.data(), true);
 		if (has_jx_display_name) setenv("JX_DISPLAY_NAME", jx_display_name.data(), true);
-		setenv("LD_PRELOAD", "lib" "libundercutbootstrap.so", true);
+		setenv("LD_PRELOAD", getenv("BOLT_PLUGIN_LIB_NAME"), true);
 		fmt::print("[B] loaded libundercutbootstrap: {}\n", errno);
 		fmt::print("[B] BOLT_PLUGIN_LIB_NAME: {}\n", getenv("BOLT_PLUGIN_LIB_NAME"));
 		// fmt::print("[B] BOLT_LIB_NAME: {}\n", getenv("BOLT_LIB_NAME"));
